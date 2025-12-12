@@ -1,0 +1,58 @@
+<% layout('/layouts/boilerplate') %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h3><b>Customize your own</b></h3>
+        <form action="/listings" method="POST" novalidate class="row g-3 needs-validation">
+            <div class="mb-3">
+                <label for="title" class="form-label"> Title</label>
+                <input type="text" placeholder="Enter the Title"  required name="newListing[title]" class="form-control">
+                <div class="valid-feedback">Title Looks good! 😍 </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <textarea placeholder="Enter description" required name="newListing[description]" class="form-control" placeholder="Please enter a description."></textarea>
+                <div class="valid-feedback">Fascinating description! &#128515; </div>
+                <div class="invalid-feedback">Please enter the description!</div> 
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label"> Price</label>
+                <input  class="form-control" required name="newListing[price]" placeholder="Price should be a valid number eg. 5000, 2500">
+                <div class="valid-feedback">Gotcha!👌 </div>
+                <div class="invalid-feedback">Please enter the valid price</div> 
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label"> Location</label>
+                <input type="text" class="form-control" required name="newListing[location]" placeholder="Enter the location eg. Jaipur, lucknow">
+                <div class="valid-feedback">Done 🌴 </div>
+                <div class="invalid-feedback">Please enter the valid location</div> 
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label"> Image URL </label>
+                <input type="text" class="form-control" name="newListing[image]" placeholder="Please provide a valid image URL.">
+                <div class="valid-feedback">Done 🌴 </div>
+                <div class="invalid-feedback">Please enter the valid URL</div> 
+            </div>
+            <div class="mb-3">
+                <label for="Country" class="form-label"> Country </label>
+                <input type="text" class="form-control" required name="newListing[country]" placeholder="Enter the country name eg. India, US">
+                 <div class="valid-feedback">Done 🌴 </div>
+                <div class="invalid-feedback">Please enter the valid Country</div> 
+            </div>
+           <div class="col-12">
+                <div class="form-check">
+                <input class="form-check-input " type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+                </div>
+            </div>
+        <div class="col-12">
+            <button class="btn btn-danger" type="submit">Add mentioned details</button>
+        </div>
+    </form>
+    </div>
+</div>

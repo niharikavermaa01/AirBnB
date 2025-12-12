@@ -1,0 +1,373 @@
+
+/* =========================
+/* Card Link Styling */
+
+.card-link {
+    text-decoration: none; 
+    color: inherit; 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: block; 
+}
+
+/* Card Hover Effect */
+.listing-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; 
+    transform: translateY(-5px); 
+}
+
+/* Image Consistency */
+.listing-img {
+    height: 20rem; 
+    object-fit: cover; 
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; 
+}
+
+/* Card Body Font and Padding */
+.listing-card .card-body {
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Show Page Styling */
+.show-img {
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.show-card {
+    padding: 0;
+    border: none;
+}
+
+.show-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 0.75rem;
+}
+
+/* Detailed Rating Header Styling */
+/* The layout and grouping are handled by the outer card, these styles handle the inner layout */
+.rating-summary-title {
+    display: flex;
+    align-items: center;
+}
+
+.detailed-ratings {
+    display: flex;
+    gap: 50px;
+}
+
+/* Rating Bar Graph */
+.rating-bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.rating-bar-label {
+    font-size: 14px;
+    color: #cec1c1;
+    width: 15px;
+    text-align: right;
+    margin-right: 5px;
+}
+.rating-bar-container {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #ddd;
+    border-radius: 2px;
+}
+.rating-bar-fill {
+    height: 100%;
+    background-color: #b1abab; /* Dark fill for bar progress */
+    border-radius: 2px;
+}
+
+/* Rating Breakdown (Icons and Values) */
+.breakdown-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    gap: 20px 40px;
+}
+.breakdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.breakdown-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+.breakdown-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #b5a8a8;
+    margin-bottom: 5px;
+}
+.breakdown-icon {
+    font-size: 24px;
+    color: #222;
+}
+
+
+/* Review Card List */
+.review-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    height: 250px; /* Enforced fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s;
+}
+.review-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #FF385C; /* Brand color for profile initial background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.review-card .comment-text {
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+/* Card Footer */
+.review-card .card-footer {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    background: none;
+}
+
+.show-more-link {
+    font-size: 14px;
+    color: #FF385C; /* Brand color for link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .detailed-ratings {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .breakdown-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* //footer */
+
+/* =====================================
+   Footer Styles
+====================================== */
+
+.site-footer {
+    background-color: #1c1c1c; /* Dark background */
+    color: #f5f5f5;           /* Light text */
+    padding: 60px 0 30px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+.site-footer a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #ff6b6b; /* Accent color on hover */
+    text-decoration: none;
+}
+
+.footer-brand {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff6b6b;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #ff6b6b;
+    margin-top: 5px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-list li a {
+    font-size: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 10px;
+    text-align: center;
+    background-color: #333;
+    border-radius: 50%;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 30px;
+    color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .site-footer {
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin: 0 5px;
+    }
+
+    .footer-list li {
+        margin-bottom: 8px;
+    }
+
+    .footer-heading::after {
+        margin: 5px auto 0 auto;
+    }
+}
+
+
+
+* Hover effect for links */
+  .nav-hover {
+    transition: all 0.3s;
+  }
+  .nav-hover:hover {
+    color: #6f4e4e !important;
+    transform: scale(1.1);
+  }
+
+  /* Search input focus effect */
+  .nav-search:focus {
+    box-shadow: 0 0 5px rgba(111, 78, 78, 0.5);
+    border-color: #6f4e4e;
+  }
+
+  /* Active link highlight */
+  .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #6f4e4e;
+  }
+
+  /* Dropdown items hover */
+  .dropdown-item:hover {
+    background-color: #f1e6e6;
+    color: #6f4e4e;
+  }
+
+  /* Logo container */
+  .logo {
+    font-size: 1.8rem;
+    color: #6f4e4e;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+
+  /* Hover animation for logo */
+  .logo:hover {
+    transform: scale(1.1) rotate(-2deg);
+    color: #a67878;
+  }
+
+  /* Icon styling */
+  .logo-icon {
+    font-size: 2rem;
+    color: #d17a7a;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .logo:hover .logo-icon {
+    transform: rotate(20deg) scale(1.2);
+    color: #ffb3b3;
+  }
+
+

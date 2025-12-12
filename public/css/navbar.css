@@ -1,0 +1,177 @@
+/* Custom Navbar Styles */
+
+.custom-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.custom-navbar .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* New: Grouping the Brand and Assortment Link */
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between logo and Assortment */
+    white-space: nowrap;
+}
+
+/* Typography for Links */
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem; /* Bigger Font Size */
+    padding: 10px;
+    transition: background-color 0.2s;
+}
+
+/* Brand/Logo */
+.brand-logo {
+    text-decoration: none;
+    color: #ff385c;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* Styling for the Assortment Link */
+.assortment-link {
+    font-size: 1.2rem; /* Make the assortment link prominent */
+    font-weight: 600;
+}
+
+.assortment-link:hover {
+    color: #ff385c; /* Highlight color on hover */
+}
+
+/* Central Search Bar Style */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-search {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.search-bar {
+    border: 1px solid #ddd;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.search-bar:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: #f7f7f7;
+}
+
+/* Right Side Actions (Unchanged) */
+.user-actions {
+    gap: 15px;
+}
+
+.host-link {
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.host-link:hover {
+    background-color: #f0f0f0;
+}
+
+/* Profile Menu Toggle Button (Unchanged) */
+.menu-toggle {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: box-shadow 0.2s;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.menu-toggle:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Menu Positioning (Unchanged) */
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+    display: none;
+    list-style: none;
+    z-index: 1010;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f7f7f7;
+}
+
+.dropdown-menu hr {
+    margin: 8px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+/* Simple Mobile Adaptation (optional but good practice) */
+@media (max-width: 992px) {
+    .main-search, .host-item, .assortment-link {
+        display: none;
+    }
+    .custom-navbar .container {
+        justify-content: space-between;
+    }
+}

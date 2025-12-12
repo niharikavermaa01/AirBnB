@@ -1,0 +1,47 @@
+<nav class="custom-navbar">
+    <div class="container">
+        
+        <div class="brand-group">
+            <a class="brand-logo" href="/">
+                <i class="fa-solid fa-compass"></i> Wanderlust
+            </a>
+            <a class="nav-link assortment-link" href="/listings">
+                 🎈 Assortment
+            </a>
+        </div>
+
+        <ul class="nav-links user-actions">
+            <li class="nav-item host-item">
+                <a class="nav-link host-link" href="/listings/new">
+                  👑 Become a host
+                </a>
+            </li>
+            <li class="nav-item dropdown-container">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="userMenu">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-circle-user fa-lg"></i>
+                </button>
+                <div class="dropdown-menu" id="userMenu">
+                    <a class="dropdown-item fw-bold" href="#">Sign up</a>
+                    <a class="dropdown-item" href="#">Log in</a>
+                    <hr>
+                    <a class="dropdown-item" href="/listings/new"><i class="fa-solid fa-person"></i> Become a host</a>
+                    <a class="dropdown-item" href="/listings">🎈 Assortment</a>
+                    <hr>
+                    <a class="dropdown-item" href="#">About us</a>
+                    <a class="dropdown-item" href="#">Services</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    // Simple JavaScript for toggling the dropdown menu (No jQuery/Bootstrap required)
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const menu = document.getElementById('userMenu');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('show');
+    });
+</script>

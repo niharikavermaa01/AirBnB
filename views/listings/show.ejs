@@ -1,0 +1,202 @@
+<% layout('/layouts/boilerplate') %>
+
+<p><b>Welcome to Wanderlust!</b></p>
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+        <h3><%= listing.title %></h3>
+    </div>
+
+    <div class="card col-8 offset-2 show-card">
+        <img src="<%= listing.image %>" class="card-img-top show-img" alt="<%= listing.title %>">
+        <div class="card-body">
+            <p class="card-text mt-2"><%=listing.description %></p>
+            <hr>
+            <ul>
+                <li class="info-item"><b>&#8377; <%= listing.price %></b> / night</li>
+                <li class="info-item"><%= listing.location %></li>
+                <li class="info-item"><%= listing.country %></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-8 offset-2 btn-container mb-4">
+        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-2 me-2">Edit</a>
+        <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+</div>
+
+<hr class="mb-5" style="width: 65%; margin-left: auto; margin-right: auto;">
+<div class="row justify-content-center mb-5">
+    <div class="col-12 col-md-10 col-lg-8">
+        <div class="card p-4 mb-5 border-0 shadow-sm rounded-4">
+            <div class="rating-summary-title mb-4 pb-3 border-bottom">
+                <span class="text-danger" style="font-size: 24px;">★</span>
+                <span class="fs-4 fw-bold ms-1 me-2 text-dark">4.81</span>
+                <span class="text-muted fw-normal">· 151 reviews</span>
+            </div>
+            
+            <div class="detailed-ratings" style="padding-bottom: 0; border-bottom: none;">
+                
+                <!-- Overall Rating Graph Section -->
+                <div class="overall-rating-graph" style="width: 150px;">
+                    <!-- 5 Star Bar (Example: 80% width) -->
+                    <div class="rating-bar-row">
+                        <span class="rating-bar-label">5</span>
+                        <div class="rating-bar-container">
+                            <div class="rating-bar-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <!-- 4 Star Bar (Example: 50% width) -->
+                    <div class="rating-bar-row">
+                        <span class="rating-bar-label">4</span>
+                        <div class="rating-bar-container">
+                            <div class="rating-bar-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <!-- 3 Star Bar (Example: 20% width) -->
+                    <div class="rating-bar-row">
+                        <span class="rating-bar-label">3</span>
+                        <div class="rating-bar-container">
+                            <div class="rating-bar-fill" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    <!-- 2 Star Bar (Example: 10% width) -->
+                    <div class="rating-bar-row">
+                        <span class="rating-bar-label">2</span>
+                        <div class="rating-bar-container">
+                            <div class="rating-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <!-- 1 Star Bar (Example: 5% width) -->
+                    <div class="rating-bar-row">
+                        <span class="rating-bar-label">1</span>
+                        <div class="rating-bar-container">
+                            <div class="rating-bar-fill" style="width: 5%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Breakdown List Section -->
+                <div class="breakdown-list" style="flex-grow: 1;">
+                    
+                    <!-- Breakdown Item 1: Cleanliness -->
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Cleanliness</span>
+                        <span class="breakdown-value">4.7</span>
+                        <span class="breakdown-icon">🛁</span>
+                    </div>
+                    
+                    <!-- Breakdown Item 2: Accuracy -->
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Accuracy</span>
+                        <span class="breakdown-value">4.8</span>
+                        <span class="breakdown-icon">✔️</span>
+                    </div>
+                    
+                    <!-- Breakdown Item 3: Check-in -->
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Check-in</span>
+                        <span class="breakdown-value">4.8</span>
+                        <span class="breakdown-icon">🔑</span>
+                    </div>
+                    
+                    <!-- Breakdown Item 4: Communication -->
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Communication</span>
+                        <span class="breakdown-value">4.9</span>
+                        <span class="breakdown-icon">💬</span>
+                    </div>
+                    
+                    <!-- Breakdown Item 5: Location -->
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Location</span>
+                        <span class="breakdown-value">4.7</span>
+                        <span class="breakdown-icon">🗺️</span>
+                    </div>
+                    
+                    <!-- Breakdown Item 6: Value -->
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Value</span>
+                        <span class="breakdown-value">4.7</span>
+                        <span class="breakdown-icon">🏷️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+           <h3>You review matter to us</h3>
+        <div class="row reviews-container g-4">
+            <%for(review of listing.reviews){ %>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="review-card">
+                    <!-- User Info -->
+                    <div>
+                        <div class="user-info">
+                            <div class="profile-pic"><%= (review.author && review.author.username) ? review.author.username.charAt(0).toUpperCase() : 'JS' %></div>
+                            <div>
+                                <h5 class="user-name">Jane Smith'</h5>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <!-- Comment Text -->
+                    <div class="comment-text">
+                        <p><%=review.comment%></p>
+                    </div>
+
+                    <!-- deleting review -->
+                    <div class="card-footer">
+                        <p style="font-size: 14px; color: #FF385C;" class="fw-bold mb-0"><%=review.rating%> stars</p>
+                        <a href="#" class="show-more-link">Show full review</a>
+                    </div>
+                    <form method="POST" action="/listings/<%= listing._id%>/reviews/<%=review._id%>?_method=DELETE" >
+                        <button type="submit" class="btn btn-danger">Delete Review</button>
+                    </form>
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+
+<!-- review section - REVIEW FORM -->
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+
+            <div class="card shadow-lg border-0 rounded-4 p-4 p-md-5">
+                <h2 class="mb-4 fw-bold text-center">Leave Your Review</h2>
+                
+                <!-- NOTE: The embedded JS is preserved and untouched below -->
+                <form action="/listings/<%= listing.id %>/reviews" method="POST" nonvalidate class="needs-validation">
+                    <div class="mb-4">
+                        <label for="rating" class="form-label fs-5 fw-semibold d-block">Overall Rating</label>
+                        <div class="d-flex align-items-center">
+                            <input class="form-range me-3" type="range" min="1" max="5" step="1" id="rating" name="review[rating]" value="5" oninput="updateRatingValue(this.value)">
+                            <span id="ratingValue" class="fw-bold fs-4 text-danger">5</span>
+                            <span class="text-muted ms-1">/ 5</span>
+                        </div>
+                        <div class="d-flex justify-content-between small text-muted mt-1 px-1">
+                            <span>Terrible (1)</span>
+                            <span>Excellent (5)</span>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <label for="validationCustom03" class="form-label"></label>
+                       <textarea type="text" class="form-control" id="validationCustom03" name="review[comment]" placeholder="Share your experience..." required style="height: 150px; resize: vertical;"></textarea>
+                        <div class="invalid-feedback">Please enter the valid comment!</div> 
+                    </div>
+                    <button type="submit" class="btn btn-danger btn-lg w-100 rounded-3 fw-bold">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Placeholder function for the rating slider (required by the form HTML)
+    function updateRatingValue(value) {
+        document.getElementById('ratingValue').textContent = value;
+    }
+</script>
